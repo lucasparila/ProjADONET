@@ -89,7 +89,8 @@ while (reader.Read())
         DateOnly.FromDateTime(reader.GetDateTime(3))
     );
     pessoaLida.setId(reader.GetInt32(0));
-    if (!pessoas.Contains(pessoaLida))
+
+    if (!pessoas.Any(p => p.Id == pessoaLida.Id))
     {
         pessoas.Add(pessoaLida);
     }
